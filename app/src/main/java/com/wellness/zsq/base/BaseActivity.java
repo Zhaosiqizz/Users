@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.wellness.zsq.util.ActivityStackManager;
-import com.wellness.zsq.util.ScreenManager;
 
 import butterknife.ButterKnife;
 
@@ -20,27 +19,12 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends AppCompatActivity {
     private  static  final  String TAG="BaseActivity";
     public abstract int getContentViewId();
-    /**
-     * 是否沉浸状态栏
-     **/
-    private boolean isStatusBar = true;
-    /**
-     * 是否允许全屏
-     **/
-    private boolean isFullScreen = true;
-    /**
-     * 是否禁止旋转屏幕
-     **/
-    private boolean isScreenRoate = false;
 
     /**
      * context
      **/
     protected Context ctx;
-    /**
-     * 是否输出日志信息
-     **/
-    private boolean isDebug;
+
 
     /**
      * 初始化界面
@@ -57,7 +41,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract void setEvent();
 
-    private ScreenManager screenManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,11 +52,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
         setEvent();
         ctx = this;
-        ActivityStackManager.getActivityStackManager().pushActivity(this);
-        screenManager = ScreenManager.getInstance();
-        screenManager.setStatusBar(isStatusBar, this);
-        screenManager.setScreenRoate(isScreenRoate, this);
-        screenManager.setFullScreen(isFullScreen, this);
+
 
     }
     /**
@@ -98,29 +77,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         ActivityStackManager.getActivityStackManager().popAllActivity();//remove all activity.
         System.exit(0);//system exit.
     }
-    /**
-     * [是否设置沉浸状态栏]
-     * @param statusBar
-     */
-    public void setStatusBar(boolean statusBar) {
-        isStatusBar = statusBar;
-    }
 
-    /**
-     * [是否设置全屏]
-     * @param fullScreen
-     */
-    public void setFullScreen(boolean fullScreen) {
-        isFullScreen = fullScreen;
-    }
-
-    /**
-     * [是否设置旋转屏幕]
-     * @param screenRoate
-     */
-    public void setScreenRoate(boolean screenRoate) {
-        isScreenRoate = screenRoate;
-    }
 
     @Override
     protected void onStart() {

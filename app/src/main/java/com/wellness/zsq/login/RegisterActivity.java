@@ -12,14 +12,15 @@ import com.wellness.zsq.users.R;
 
 public class RegisterActivity extends BaseActivity{
 
+
     @Override
     public int getContentViewId() {
-        return R.layout.activity_register;
+        return 0;
     }
 
     @Override
     protected void initView() {
-
+        
     }
 
     @Override
