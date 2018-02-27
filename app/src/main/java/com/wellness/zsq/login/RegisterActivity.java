@@ -15,23 +15,10 @@ public class RegisterActivity extends BaseActivity{
 
     @Override
     public int getContentViewId() {
-        return 0;
+        return R.layout.activity_register;
     }
 
-    @Override
-    protected void initView() {
-        
-    }
 
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
-    protected void setEvent() {
-
-    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

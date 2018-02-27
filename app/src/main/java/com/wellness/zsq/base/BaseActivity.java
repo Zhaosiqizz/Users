@@ -26,31 +26,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Context ctx;
 
 
-    /**
-     * 初始化界面
-     **/
-    protected abstract void initView();
-
-    /**
-     * 初始化数据
-     */
-    protected abstract void initData();
-
-    /**
-     * 绑定事件
-     */
-    protected abstract void setEvent();
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getContentViewId());
         ButterKnife.bind(this);
         Log.i(TAG, "--->onCreate()");
-        initView();
-        initData();
-        setEvent();
+
         ctx = this;
 
 
