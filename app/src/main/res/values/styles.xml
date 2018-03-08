@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--
+    colorPrimary 标题栏颜色
+    colorPrimaryDark 状态栏颜色
+    colorAccent 选中后颜色
+    navigationBarColor 虚拟按钮颜色
+     <item name="navigationBarColor">@color/colorWhite</item>
+        <item name="windowBackground">@color/colorWhite</item>
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorGreen1</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+
+    </style>
+
+</resources>
